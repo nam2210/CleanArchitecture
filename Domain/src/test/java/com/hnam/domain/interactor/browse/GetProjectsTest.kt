@@ -6,6 +6,7 @@ import com.hnam.domain.model.Project
 import com.hnam.domain.repository.ProjectRepository
 import com.hnam.domain.test.ProjectDataFactory
 import com.nhaarman.mockito_kotlin.whenever
+import com.nhaarman.mockitokotlin2.whenever
 import io.reactivex.Observable
 import org.junit.Before
 import org.junit.Test
