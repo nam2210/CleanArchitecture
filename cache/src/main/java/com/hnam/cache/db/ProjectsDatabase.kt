@@ -14,7 +14,7 @@ import javax.inject.Inject
  * Created by nampham on 12/17/18.
  */
 @Database(entities = arrayOf(
-    CachedProject::class, Config::class), version = 1)
+    CachedProject::class, Config::class), version = 2)
 abstract class ProjectsDatabase @Inject constructor(): RoomDatabase() {
 
     abstract fun cachedProjectsDao(): CachedProjectsDao

@@ -3,7 +3,6 @@ package com.hnam.cache
 import com.hnam.cache.db.ProjectsDatabase
 import com.hnam.cache.mapper.CachedProjectMapper
 import com.hnam.cache.model.Config
-import com.hnam.data.mapper.ProjectMapper
 import com.hnam.data.model.ProjectEntity
 import com.hnam.data.repository.ProjectCache
 import io.reactivex.Completable
@@ -39,7 +38,7 @@ class ProjectCacheImpl @Inject constructor(
                 .getProjects()
                 .map {
                     it.map { i -> mapper.mapFromCached(i) }
-                }
+                }.toObservable()
     }
 
     override fun getBookmarkedProjects(): Observable<List<ProjectEntity>> {
@@ -47,7 +46,7 @@ class ProjectCacheImpl @Inject constructor(
             .getBookmarkedProjects()
             .map {
                 it.map { i -> mapper.mapFromCached(i) }
-            }
+            }.toObservable()
     }
 
     override fun setProjectAsBookmarked(projectId: String): Completable {
