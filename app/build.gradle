@@ -1,8 +1,7 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     def globalConfiguration = rootProject.extensions.getByName("ext")
@@ -17,7 +16,14 @@ android {
         minSdkVersion globalConfiguration["androidMinSdkVersion"]
         targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
         testInstrumentationRunner "co.joebirch.mobile_ui.test.TestRunner"
+
+        multiDexEnabled true
     }
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -27,6 +33,13 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    configurations.all {
+        resolutionStrategy {
+            force 'net.bytebuddy:byte-buddy:1.8.22'
+            force 'net.bytebuddy:byte-buddy-agent:1.8.22'
+        }
     }
 }
 
@@ -56,6 +69,7 @@ dependencies {
     implementation mobileUiDependencies.glide
     implementation mobileUiDependencies.dagger
     implementation mobileUiDependencies.daggerSupport
+    implementation mobileUiDependencies.daggerAndroid
 
     compile presentationDependencies.archRuntime
     compile presentationDependencies.archExtensions
@@ -96,5 +110,7 @@ dependencies {
 
     kaptTest mobileUiDependencies.daggerCompiler
     kaptAndroidTest mobileUiDependencies.daggerCompiler
+
+    compile 'com.android.support:multidex:1.0.3'
 }
 apply plugin: 'kotlin-android-extensions'

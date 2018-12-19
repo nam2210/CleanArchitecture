@@ -14,7 +14,7 @@ ext {
     javaxInjectVersion = '1'
     //remote
     androidAnnotationsVersion = '21.0.3'
-    daggerVersion = '2.11'
+    daggerVersion = '2.19'
     gsonVersion = '2.8.1'
     okHttpVersion = '3.8.1'
     retrofitVersion = '2.3.0'
@@ -97,7 +97,7 @@ ext {
             dagger:             "com.google.dagger:dagger:${daggerVersion}",
             gson:               "com.google.code.gson:gson:${gsonVersion}",
             rxKotlin:           "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            kotlin:             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
+            kotlin:             "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
             androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}",
@@ -122,7 +122,7 @@ ext {
             daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
             dagger:             "com.google.dagger:dagger:${daggerVersion}",
             rxKotlin:           "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
-            kotlin:             "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}",
+            kotlin:             "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${kotlinVersion}",
             rxAndroid:          "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
             javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
             javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
@@ -157,6 +157,7 @@ ext {
             supportRecyclerView:"com.android.support:recyclerview-v7:${supportLibraryVersion}",
             supportDesign:      "com.android.support:design:${supportLibraryVersion}",
             timber:             "com.jakewharton.timber:timber:${timberVersion}",
+            daggerAndroid:       "com.google.dagger:dagger-android:${daggerVersion}",
             daggerSupport:      "com.google.dagger:dagger-android-support:${daggerVersion}",
             daggerProcessor:    "com.google.dagger:dagger-android-processor:${daggerVersion}",
             glassfishAnnotation: "org.glassfish:javax.annotation:${glassfishAnnotationVersion}",
@@ -170,9 +171,9 @@ ext {
             kotlinJUnit:        "org.jetbrains.kotlin:kotlin-test-junit:${kotlin_version}",
             assertj:            "org.assertj:assertj-core:${assertJVersion}",
             mockito:            "com.nhaarman.mockitokotlin2:mockito-kotlin:${mockitoKotlinVersion}",
+            mockitoAndroid:     "org.mockito:mockito-android:${mockitoAndroidVersion}",
             supportRunner:      "com.android.support.test:runner:${androidSupportRunnerVersion}",
             supportRules:       "com.android.support.test:rules:${androidSupportRulesVersion}",
-            mockitoAndroid:     "org.mockito:mockito-android:${mockitoAndroidVersion}",
             espressoCore:       "com.android.support.test.espresso:espresso-core:${espressoVersion}",
             espressoIntents:    "com.android.support.test.espresso:espresso-intents:${espressoVersion}",
             espressoContrib:    "com.android.support.test.espresso:espresso-contrib:${espressoVersion}",
