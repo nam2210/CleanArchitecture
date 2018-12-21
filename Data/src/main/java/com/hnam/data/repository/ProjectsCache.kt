@@ -8,7 +8,7 @@ import io.reactivex.Single
 /**
  * Created by nampham on 12/12/18.
  */
-interface ProjectCache {
+interface ProjectsCache {
 
     fun clearProjects(): Completable
 

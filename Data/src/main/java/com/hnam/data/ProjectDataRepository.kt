@@ -1,7 +1,7 @@
 package com.hnam.data
 
 import com.hnam.data.mapper.ProjectMapper
-import com.hnam.data.repository.ProjectCache
+import com.hnam.data.repository.ProjectsCache
 import com.hnam.data.store.ProjectDataStoreFactory
 import com.hnam.domain.model.Project
 import com.hnam.domain.repository.ProjectRepository
@@ -16,7 +16,7 @@ import javax.inject.Inject
  */
 class ProjectDataRepository @Inject constructor(
     private val mapper: ProjectMapper,
-    private val cache: ProjectCache,
+    private val cache: ProjectsCache,
     private val factory: ProjectDataStoreFactory
 ) : ProjectRepository {
     override fun getProjects(): Observable<List<Project>> {

@@ -6,7 +6,7 @@ import io.reactivex.Observable
 /**
  * Created by nampham on 12/12/18.
  */
-interface ProjectRemote {
+interface ProjectsRemote {
 
     fun getProjects(): Observable<List<ProjectEntity>>
 }

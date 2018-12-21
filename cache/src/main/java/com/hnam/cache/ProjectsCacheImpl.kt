@@ -4,7 +4,7 @@ import com.hnam.cache.db.ProjectsDatabase
 import com.hnam.cache.mapper.CachedProjectMapper
 import com.hnam.cache.model.Config
 import com.hnam.data.model.ProjectEntity
-import com.hnam.data.repository.ProjectCache
+import com.hnam.data.repository.ProjectsCache
 import io.reactivex.Completable
 import io.reactivex.Observable
 import io.reactivex.Single
@@ -13,10 +13,10 @@ import javax.inject.Inject
 /**
  * Created by nampham on 12/17/18.
  */
-class ProjectCacheImpl @Inject constructor(
+class ProjectsCacheImpl @Inject constructor(
     private val db : ProjectsDatabase,
     private val mapper: CachedProjectMapper
-): ProjectCache {
+): ProjectsCache {
     override fun clearProjects(): Completable {
         return Completable.defer {
             db.cachedProjectsDao().deleteProjects()

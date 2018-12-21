@@ -8,7 +8,6 @@ import com.hnam.cache.test.factory.ProjectDataFactory
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.junit.runners.JUnit4
 import org.robolectric.RobolectricTestRunner
 import org.robolectric.RuntimeEnvironment
 
@@ -23,7 +22,7 @@ class ProjectCacheImplTest {
         RuntimeEnvironment.application.applicationContext,
         ProjectsDatabase::class.java).allowMainThreadQueries().build()
     private val mapper = CachedProjectMapper()
-    private val cache = ProjectCacheImpl(datatabase, mapper)
+    private val cache = ProjectsCacheImpl(datatabase, mapper)
 
     @Test
     fun clearTablesCompletes(){

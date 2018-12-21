@@ -1,7 +1,7 @@
 package com.hnam.data.store
 
 import com.hnam.data.model.ProjectEntity
-import com.hnam.data.repository.ProjectCache
+import com.hnam.data.repository.ProjectsCache
 import com.hnam.data.test.factory.DataFactory
 import com.hnam.data.test.factory.ProjectFactory
 import com.nhaarman.mockitokotlin2.any
@@ -19,7 +19,7 @@ import org.junit.runners.JUnit4
  */
 @RunWith(JUnit4::class)
 class ProjectsCacheDataStoreTest {
-    private val cache  = mock<ProjectCache>()
+    private val cache  = mock<ProjectsCache>()
     private val projecCacheDataStore = ProjectCacheDataStore(cache)
 
 

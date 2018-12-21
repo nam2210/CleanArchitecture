@@ -2,7 +2,7 @@ package com.hnam.data.store
 
 import com.hnam.data.model.ProjectEntity
 import com.hnam.data.repository.ProjectDataStore
-import com.hnam.data.repository.ProjectRemote
+import com.hnam.data.repository.ProjectsRemote
 import io.reactivex.Completable
 import io.reactivex.Observable
 import javax.inject.Inject
@@ -10,7 +10,7 @@ import javax.inject.Inject
 /**
  * Created by nampham on 12/12/18.
  */
-class ProjectRemoteDataStore @Inject constructor(private val projectRemote: ProjectRemote) : ProjectDataStore {
+class ProjectRemoteDataStore @Inject constructor(private val projectRemote: ProjectsRemote) : ProjectDataStore {
     override fun getProjects(): Observable<List<ProjectEntity>> {
         return projectRemote.getProjects()
     }

@@ -1,7 +1,7 @@
 package com.hnam.data.store
 
 import com.hnam.data.model.ProjectEntity
-import com.hnam.data.repository.ProjectCache
+import com.hnam.data.repository.ProjectsCache
 import com.hnam.data.repository.ProjectDataStore
 import io.reactivex.Completable
 import io.reactivex.Observable
@@ -10,7 +10,7 @@ import javax.inject.Inject
 /**
  * Created by nampham on 12/12/18.
  */
-class ProjectCacheDataStore @Inject constructor(private val projectCache: ProjectCache): ProjectDataStore {
+class ProjectCacheDataStore @Inject constructor(private val projectCache: ProjectsCache): ProjectDataStore {
     override fun getProjects(): Observable<List<ProjectEntity>> {
         return projectCache.getProjects()
     }

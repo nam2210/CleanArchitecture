@@ -2,7 +2,7 @@ package com.hnam.data
 
 import com.hnam.data.mapper.ProjectMapper
 import com.hnam.data.model.ProjectEntity
-import com.hnam.data.repository.ProjectCache
+import com.hnam.data.repository.ProjectsCache
 import com.hnam.data.repository.ProjectDataStore
 import com.hnam.data.store.ProjectDataStoreFactory
 import com.hnam.data.test.factory.DataFactory
@@ -27,7 +27,7 @@ class ProjectsDataRepositoryTest {
 
     private val mapper = mock<ProjectMapper>()
     private val factory = mock<ProjectDataStoreFactory>()
-    private val cache = mock<ProjectCache>()
+    private val cache = mock<ProjectsCache>()
     private val repository = ProjectDataRepository(mapper, cache, factory)
     private val store = mock<ProjectDataStore>()
 

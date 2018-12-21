@@ -1,10 +1,9 @@
 package com.hnam.data.store
 
 import com.hnam.data.model.ProjectEntity
-import com.hnam.data.repository.ProjectRemote
+import com.hnam.data.repository.ProjectsRemote
 import com.hnam.data.test.factory.DataFactory
 import com.hnam.data.test.factory.ProjectFactory
-import com.nhaarman.mockitokotlin2.any
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.whenever
 import io.reactivex.Observable
@@ -18,7 +17,7 @@ import org.junit.runners.JUnit4
 @RunWith(JUnit4::class)
 class ProjectsRemoteDataStoreTest {
 
-    private val remote = mock<ProjectRemote>()
+    private val remote = mock<ProjectsRemote>()
 
     private val store = ProjectRemoteDataStore(remote)
 
