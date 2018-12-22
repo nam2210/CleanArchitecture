@@ -12,7 +12,7 @@ import dagger.Provides
 /**
  * Created by nampham on 12/21/18.
  */
-
+@Module
 abstract class RemoteModule {
 
     @Module

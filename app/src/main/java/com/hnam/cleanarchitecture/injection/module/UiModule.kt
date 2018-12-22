@@ -1,6 +1,7 @@
 package com.hnam.cleanarchitecture.module
 
 import com.hnam.cleanarchitecture.UiThread
+import com.hnam.cleanarchitecture.bookmarked.BookmarkedActivity
 import com.hnam.cleanarchitecture.browse.BrowseActivity
 import com.hnam.domain.executor.PostExecutionThread
 import dagger.Binds
@@ -18,6 +19,9 @@ abstract class UiModule {
 
     @ContributesAndroidInjector
     abstract fun contributesBrowseActivity(): BrowseActivity
+
+    @ContributesAndroidInjector
+    abstract fun contributesBookmarkedActivity(): BookmarkedActivity
 
 
 }

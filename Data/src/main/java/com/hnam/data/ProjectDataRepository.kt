@@ -20,14 +20,25 @@ class ProjectDataRepository @Inject constructor(
     private val factory: ProjectDataStoreFactory
 ) : ProjectRepository {
     override fun getProjects(): Observable<List<Project>> {
-        return Observable.zip(cache.areProjectsCached().toObservable(),
-            cache.isProjectsCacheExpired().toObservable(),
-            BiFunction<Boolean, Boolean, Pair<Boolean, Boolean>> { areCached, isExpired ->
-                Pair(areCached, isExpired)
-            })
-            .flatMap {
-                factory.getDataStore(it.first, it.second).getProjects()
-            }
+//        return Observable.zip(cache.areProjectsCached().toObservable(),
+//            cache.isProjectsCacheExpired().toObservable(),
+//            BiFunction<Boolean, Boolean, Pair<Boolean, Boolean>> { areCached, isExpired ->
+//                Pair(areCached, isExpired)
+//            })
+//            .flatMap {
+//                factory.getDataStore(it.first, it.second).getProjects()
+//            }
+//            .flatMap { projects ->
+//                factory.getCacheDataStore()
+//                    .saveProjects(projects)
+//                    .andThen(Observable.just(projects))
+//            }
+//            .map {
+//                it.map {
+//                    mapper.mapFromEntity(it)
+//                }
+//            }
+        return factory.getDataStore(false, true).getProjects()
             .flatMap { projects ->
                 factory.getCacheDataStore()
                     .saveProjects(projects)
